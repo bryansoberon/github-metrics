@@ -1,4 +1,3 @@
-
 name: Metrics
 on:
   schedule: [{cron: "0 0 * * *"}] # Se ejecuta todos los días a medianoche
@@ -14,5 +13,7 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: America/Lima
-
-
+          config_display: large
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          config_theme: tokyonight
