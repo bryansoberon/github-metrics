@@ -1,7 +1,7 @@
 name: Metrics
 on:
-  schedule: [{cron: "0 0 * * *"}] # Se ejecuta todos los días a medianoche
-  workflow_dispatch: # Permite ejecutarlo manualmente
+  schedule: [{cron: "0 0 * * *"}] # Corre todos los días a medianoche
+  workflow_dispatch: # Permite correrlo manualmente
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
@@ -13,7 +13,9 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: America/Lima
-          config_display: large
+          config_theme: tokyonight
+
+          # Plugins
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-          config_theme: tokyonight
+          plugin_isocalendar_look: iso
